@@ -19,7 +19,7 @@
 
 #define MAX_PACKET_SIZE 1024
 
-// Net adress structure
+// Net address structure
 typedef struct
 {
     unsigned int ip;
