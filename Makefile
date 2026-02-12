@@ -8,6 +8,8 @@ TARGETS = src/main.cpp \
 	  src/server.cpp
 # Output
 EXEC = teewarslegacy
+# Linker flags
+LDFLAGS = -lSDL
 
 all:
-	$(CXX) $(TARGETS) -o $(EXEC)
+	$(CXX) $(TARGETS) $(LDFLAGS) -o $(EXEC)
