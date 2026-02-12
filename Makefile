@@ -5,7 +5,8 @@ CXX = g++
 # Targets
 TARGETS = src/main.cpp \
 	  src/client.cpp \
-	  src/server.cpp
+	  src/server.cpp \
+	  src/network.cpp
 # Output
 EXEC = teewarslegacy
 # Linker flags
