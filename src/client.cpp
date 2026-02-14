@@ -1,5 +1,6 @@
 /* copyright (c) 2026 mykyta polishyk, see LICENSE file for more info */
 #include "stdio.h"
+#include "screen.h"
 #include "SDL/SDL.h"
 
 // Global objects
@@ -16,6 +17,9 @@ void client_main(){
 	screen = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
 	SDL_WM_SetCaption("Teewars Legacy", NULL);
 
+	draw_rectangle(0,0,400,400,SDL_MapRGB(screen->format, 255, 255, 255));
+	SDL_Flip(screen); 
+	
 	SDL_Delay(2000);
 
     SDL_Quit(); // Closing window

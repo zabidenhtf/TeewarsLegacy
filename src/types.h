@@ -1,4 +1,5 @@
 /* copyright (c) 2007 magnus auvinen, see LICENSE file for more info */
+
 #ifndef TYPES_H
 #define TYPES_H
 
