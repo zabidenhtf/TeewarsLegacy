@@ -1,10 +1,17 @@
 /* copyright (c) 2026 mykyta polishyk, see LICENSE file for more info */
 #include "stdio.h"
+#include "string.h"
+
 #include "screen.h"
+#include "version.h"
+#include "network.h"
+
 #include "SDL/SDL.h"
+#include "SDL/SDL_image.h"
 
 // Global objects
 SDL_Surface *screen;
+NetAddr connect_server;
 
 void client_main(){
 	// Initialization of SDL
@@ -12,14 +19,21 @@ void client_main(){
 		fprintf(stderr, "Failed to initializate SDL");
         exit(1);
 	}	
-
+	// Initialization of SDL_image
+	int flags = IMG_INIT_PNG;
+	if ( !( IMG_Init(flags) & flags ) ) {
+	    fprintf(stderr, "Failed to initializate SDL image");
+        exit(1);
+	}
 	// Creating window
 	screen = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
-	SDL_WM_SetCaption("Teewars Legacy", NULL);
+	SDL_WM_SetCaption("Teewars Legacy milestone ", NULL);
 
-	draw_rectangle(0,0,400,400,SDL_MapRGB(screen->format, 255, 255, 255));
+	SDL_Surface *tee = load_texture("developing/tee_walk1.png");;
+
+	draw_surface(tee,0,0,400,400,SDL_MapRGB(screen->format, 255, 255, 255));
 	SDL_Flip(screen); 
-	
+
 	SDL_Delay(2000);
 
     SDL_Quit(); // Closing window
