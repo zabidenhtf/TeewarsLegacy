@@ -29,3 +29,13 @@ void draw_surface(SDL_Surface *surface, int x, int y, int w, int h, int color){
 	// Drawing surface
 	SDL_BlitSurface(surface, NULL, screen, &dest);
 }
+
+/* Drawing surface, but with frame animation */
+void draw_animation_surface(SDL_Surface *surface, int x, int y, int w, int h, int color, int numofframes, int frame){
+	SDL_Rect dest; // Pos of surface
+	dest.x = x;
+	dest.y = y;
+
+	// Drawing surface
+	SDL_BlitSurface(surface, NULL, screen, &dest);
+}

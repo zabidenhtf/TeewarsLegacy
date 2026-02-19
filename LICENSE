@@ -19,13 +19,5 @@ freely, subject to the following restrictions:
 4. Neither this software nor any of its individual components, in original
   or modified versions, may be sold by itself.
 
-------------------------------------------------------------------------
-
-IMPORTANT NOTE! The source under src/engine/external are stripped
-libraries with their own licenses. Mostly BSD or zlib/libpng license but
-check the individual libraries.
-
-------------------------------------------------------------------------
-
 With that being said, contact us if there is anything you want to do
 that the license does not premit.
