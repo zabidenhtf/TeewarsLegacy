@@ -21,8 +21,8 @@ enum {
 // GFX important functions
 extern void draw_rectangle(int x, int y, int w, int h, int color); // Draw rectange with size and color
 extern SDL_Surface* load_texture(char *path); // Load texture into surface
-extern void draw_surface(SDL_Surface *surface, int x, int y, int w, int h, int color); // Draw surface with size and color
-extern void draw_animation_surface(SDL_Surface *surface, int x, int y, int w, int h, int color, int numofframes, int frame); // Drawing surface, but with frame animation (Can be helpfull in animations)
+extern void draw_surface(SDL_Surface *surface, int x, int y, int color); // Draw surface with size and color
+extern void draw_animation_surface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame); // Drawing surface, but with frame animation (Can be helpfull in animations)
 // Game GFX functions
 extern void draw_tee(int x, int y, player_state state, int color);
 

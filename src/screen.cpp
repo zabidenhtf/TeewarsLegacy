@@ -21,7 +21,7 @@ SDL_Surface* load_texture(char *path){
 }
 
 /* Draw surface with size and color */
-void draw_surface(SDL_Surface *surface, int x, int y, int w, int h, int color){
+void draw_surface(SDL_Surface *surface, int x, int y, int color){
 	SDL_Rect dest; // Pos of surface
 	dest.x = x;
 	dest.y = y;
@@ -31,11 +31,18 @@ void draw_surface(SDL_Surface *surface, int x, int y, int w, int h, int color){
 }
 
 /* Drawing surface, but with frame animation */
-void draw_animation_surface(SDL_Surface *surface, int x, int y, int w, int h, int color, int numofframes, int frame){
-	SDL_Rect dest; // Pos of surface
-	dest.x = x;
-	dest.y = y;
+void draw_animation_surface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame){
+	SDL_Rect point2;
+	point2.x = x;
+	point2.y = y;
+
+	// Crop frame 
+	SDL_Rect src;
+	src.x = 0;
+	src.y = (frame-1)*(surface->h/numofframes);
+	src.w = surface->w;
+	src.h = surface->h / numofframes;
 
 	// Drawing surface
-	SDL_BlitSurface(surface, NULL, screen, &dest);
+	SDL_BlitSurface(surface, &src, screen, &point2);
 }

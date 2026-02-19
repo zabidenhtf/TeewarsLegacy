@@ -29,9 +29,9 @@ void client_main(){
 	screen = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
 	SDL_WM_SetCaption("Teewars Legacy milestone ", NULL);
 
-	SDL_Surface *tee = load_texture("developing/tee_walk1.png");;
+	SDL_Surface *debug = load_texture("developing/debug_animation.png");;
 
-	draw_surface(tee,0,0,400,400,SDL_MapRGB(screen->format, 255, 255, 255));
+	draw_animation_surface(debug,0,0,SDL_MapRGB(screen->format, 255, 255, 255), 3 , 1);
 	SDL_Flip(screen); 
 
 	SDL_Delay(2000);
