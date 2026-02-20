@@ -3,6 +3,21 @@
 // Global objects
 extern SDL_Surface *screen;
 
+// Tees tileset
+SDL_Surface *tee_tileset_left;
+SDL_Surface *tee_tileset_right;
+// Weapons tileset
+SDL_Surface *weapons_tileset_left;
+SDL_Surface *weapons_tileset_right;
+
+/* Load sprites into pointers */
+void load_sprites(){
+	tee_tileset_left = load_texture("developing/tees_left.png");
+	tee_tileset_right = load_texture("developing/tees_right.png");
+	weapons_tileset_left = load_texture("developing/weapons_left.png");
+	weapons_tileset_right = load_texture("developing/weapons_right.png");
+}
+
 /* Draw rectange with size and color */
 void draw_rectangle(int x, int y, int w, int h, int color){
 	SDL_Rect rect;

@@ -7,18 +7,30 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-// Sprites
-enum {
-	tee_walk1=0,
+// Sprites global pointers
+// Tees tileset
+extern SDL_Surface *tee_tileset_left;
+extern SDL_Surface *tee_tileset_right;
+// Weapons tileset
+extern SDL_Surface *weapons_tileset_left;
+extern SDL_Surface *weapons_tileset_right;
+
+enum{ // Tee tileset
+	tee_idle=1,
+	tee_walk1,
 	tee_walk2,
-	tee_idle,
-	gun,
+	tee_jump
+};
+
+enum{ // Weapons tileset
+	gun=1,
+	rifle,
 	shotgun,
-	grenade,
-	rifle
+	grenade
 };
 
 // GFX important functions
+extern void load_sprites(); // Load sprites into pointers
 extern void draw_rectangle(int x, int y, int w, int h, int color); // Draw rectange with size and color
 extern SDL_Surface* load_texture(char *path); // Load texture into surface
 extern void draw_surface(SDL_Surface *surface, int x, int y, int color); // Draw surface with size and color

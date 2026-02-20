@@ -25,13 +25,13 @@ void client_main(){
 	    fprintf(stderr, "Failed to initializate SDL image");
         exit(1);
 	}
+	// Loading data
+	load_sprites();
 	// Creating window
 	screen = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
 	SDL_WM_SetCaption("Teewars Legacy milestone ", NULL);
 
-	SDL_Surface *debug = load_texture("developing/debug_animation.png");;
-
-	draw_animation_surface(debug,0,0,SDL_MapRGB(screen->format, 255, 255, 255), 3 , 1);
+	draw_animation_surface(tee_tileset_left,0,0,SDL_MapRGB(screen->format, 255, 255, 255), 4 , tee_walk1);
 	SDL_Flip(screen); 
 
 	SDL_Delay(2000);
