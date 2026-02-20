@@ -12,10 +12,10 @@ SDL_Surface *weapons_tileset_right;
 
 /* Load sprites into pointers */
 void load_sprites(){
-	tee_tileset_left = load_texture("developing/tees_left.png");
-	tee_tileset_right = load_texture("developing/tees_right.png");
-	weapons_tileset_left = load_texture("developing/weapons_left.png");
-	weapons_tileset_right = load_texture("developing/weapons_right.png");
+	tee_tileset_left = load_texture("data/tees_left.png");
+	tee_tileset_right = load_texture("data/tees_right.png");
+	weapons_tileset_left = load_texture("data/weapons_left.png");
+	weapons_tileset_right = load_texture("data/weapons_right.png");
 }
 
 /* Draw rectange with size and color */
