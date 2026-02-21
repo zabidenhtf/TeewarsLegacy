@@ -9,6 +9,8 @@ SDL_Surface *tee_tileset_right;
 // Weapons tileset
 SDL_Surface *weapons_tileset_left;
 SDL_Surface *weapons_tileset_right;
+// Logo animation
+SDL_Surface *logo_animation;
 
 /* Load sprites into pointers */
 void load_sprites(){
@@ -16,6 +18,7 @@ void load_sprites(){
 	tee_tileset_right = load_texture("data/tees_right.png");
 	weapons_tileset_left = load_texture("data/weapons_left.png");
 	weapons_tileset_right = load_texture("data/weapons_right.png");
+	logo_animation = load_texture("data/logo.png");
 }
 
 /* Draw rectange with size and color */

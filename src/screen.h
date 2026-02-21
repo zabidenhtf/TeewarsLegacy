@@ -14,6 +14,8 @@ extern SDL_Surface *tee_tileset_right;
 // Weapons tileset
 extern SDL_Surface *weapons_tileset_left;
 extern SDL_Surface *weapons_tileset_right;
+// Logo animation
+extern SDL_Surface *logo_animation; // This animation have 20 frames
 
 enum{ // Tee tileset
 	tee_idle=1,

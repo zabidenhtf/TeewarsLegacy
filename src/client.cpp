@@ -31,7 +31,7 @@ void client_main(){
 	screen = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
 	SDL_WM_SetCaption("Teewars Legacy milestone ", NULL);
 
-	draw_animation_surface(tee_tileset_left,0,0,SDL_MapRGB(screen->format, 255, 255, 255), 4 , tee_walk1);
+	draw_animation_surface(logo_animation,0,0,SDL_MapRGB(screen->format, 255, 255, 255), 20 , 1);
 	SDL_Flip(screen); 
 
 	SDL_Delay(2000);
