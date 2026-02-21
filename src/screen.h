@@ -9,13 +9,13 @@
 
 // Sprites global pointers
 // Tees tileset
-extern SDL_Surface *tee_tileset_left;
-extern SDL_Surface *tee_tileset_right;
+extern SDL_Surface *TeeTilesetLeft;
+extern SDL_Surface *TeeTilesetRight;
 // Weapons tileset
-extern SDL_Surface *weapons_tileset_left;
-extern SDL_Surface *weapons_tileset_right;
+extern SDL_Surface *WeaponsTilesetLeft;
+extern SDL_Surface *WeaponsTilesetRight;
 // Logo animation
-extern SDL_Surface *logo_animation; // This animation have 20 frames
+extern SDL_Surface *LogoAnimation; // This animation have 20 frames
 
 enum{ // Tee tileset
 	tee_idle=1,
@@ -32,12 +32,12 @@ enum{ // Weapons tileset
 };
 
 // GFX important functions
-extern void load_sprites(); // Load sprites into pointers
-extern void draw_rectangle(int x, int y, int w, int h, int color); // Draw rectange with size and color
-extern SDL_Surface* load_texture(char *path); // Load texture into surface
-extern void draw_surface(SDL_Surface *surface, int x, int y, int color); // Draw surface with size and color
-extern void draw_animation_surface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame); // Drawing surface, but with frame animation (Can be helpfull in animations)
+extern void LoadSprites(); // Load sprites into pointers
+extern void DrawRectangle(int x, int y, int w, int h, int color); // Draw rectange with size and color
+extern SDL_Surface* LoadTexture(char *path); // Load texture into surface
+extern void DrawSurface(SDL_Surface *surface, int x, int y, int color); // Draw surface with size and color
+extern void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame); // Drawing surface, but with frame animation (Can be helpfull in animations)
 // Game GFX functions
-extern void draw_tee(int x, int y, player_state state, int color);
+extern void DrawTee(int x, int y, PlayerState state, int color);
 
 #endif

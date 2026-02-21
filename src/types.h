@@ -4,14 +4,14 @@
 #define TYPES_H
 
 // Menu state
-enum menu_state{
+enum MenuState{
 	serverlist = 0, // Servers list
 	online, // Nothing, because player ingame
 	pausemenu // Pause menu
 };
 
 // Player state
-enum player_state{
+enum PlayerState{
 	walk_left = 0,
 	walk_right,
 	idle_left,

@@ -3,7 +3,7 @@
 #define PROTOCOL_H
 
 /* Network input struct */
-struct input{
+struct Input{
 	int left;
 	int right;
 	int angle;
@@ -14,12 +14,12 @@ struct input{
 };
 
 /* Vertex of vertex map system, also this is like float, but 1 is 32/32 */
-struct map_vertex{
+struct MapVertex{
 	int x,y;
 };
 
 /* Map object like pickup and etc */
-struct map_object{
+struct MapObject{
 	int x,y;
 	int type;
 };

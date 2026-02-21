@@ -7,7 +7,8 @@ TARGETS = src/main.cpp \
 	  src/client.cpp \
 	  src/server.cpp \
 	  src/network.cpp \
-	  src/screen.cpp
+	  src/screen.cpp \
+	  src/game/game_client.cpp
 # Output
 EXEC = teewarslegacy
 # Linker flags
