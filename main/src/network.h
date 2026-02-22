@@ -26,10 +26,10 @@ typedef struct
     unsigned short port;
 } NetAddr;
 
-int net_init(); // Initialization of socket
-int net_udp_open(unsigned short port); // Open socket
-int net_udp_send(int sock, NetAddr *addr, void *data, int size); // Sending data
-int net_udp_recv(int sock, NetAddr *addr, void *buffer, int maxsize); // Getting data
-void net_close(int sock); // Closing socket
+int NetInit(); // Initialization of socket
+int NetUPDOpen(unsigned short port); // Open socket
+int NetUPDSend(int sock, NetAddr *addr, void *data, int size); // Sending data
+int NetUPDRecv(int sock, NetAddr *addr, void *buffer, int maxsize); // Getting data
+void NetClose(int sock); // Closing socket
 
 #endif

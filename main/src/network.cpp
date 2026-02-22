@@ -1,7 +1,7 @@
 /* copyright (c) 2026 mykyta polishyk, see LICENSE file for more info */
 #include "network.h"
 
-int net_init() // Initialization of socket
+int NetInit() // Initialization of socket
 {
 #ifdef _WIN32
     WSADATA wsa;
@@ -11,7 +11,7 @@ int net_init() // Initialization of socket
 #endif
 }
 
-int net_udp_open(unsigned short port) // Open socket
+int NetUPDOpen(unsigned short port) // Open socket
 {
     int sock = socket(AF_INET, SOCK_DGRAM, 0);
 
@@ -27,7 +27,7 @@ int net_udp_open(unsigned short port) // Open socket
     return sock;
 }
 
-int net_udp_send(int sock, NetAddr *addr, void *data, int size) // Sending data
+int NetUPDSend(int sock, NetAddr *addr, void *data, int size) // Sending data
 {
     struct sockaddr_in a;
 
@@ -39,7 +39,7 @@ int net_udp_send(int sock, NetAddr *addr, void *data, int size) // Sending data
                   (struct sockaddr*)&a, sizeof(a));
 }
 
-int net_udp_recv(int sock, NetAddr *addr, void *buffer, int maxsize) // Getting data
+int NetUPDRecv(int sock, NetAddr *addr, void *buffer, int maxsize) // Getting data
 {
     struct sockaddr_in a;
     socklen_t len = sizeof(a);
@@ -56,7 +56,7 @@ int net_udp_recv(int sock, NetAddr *addr, void *buffer, int maxsize) // Getting 
     return r;
 }
 
-void net_close(int sock) // Closing socket
+void NetClose(int sock) // Closing socket
 {
 #ifdef _WIN32
     closesocket(sock);
