@@ -1,0 +1,9 @@
+# Teewars Legacy
+## What is teewars legacy
+Teewars Legacy - is fork of Teeworlds game
+## Features of project
+- Oldschool sources structure like in 2000s games
+- Oldschool GFX like in 2000s games
+----------------------
+Copyright (c) 2007 Magnus Auvinen
+Copyright (c) 2026 Mykyta Polishyk
