@@ -14,7 +14,7 @@ GameCore::GameCore(){
 MenuState GameCore::Loop(){
 	SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 0, 0, 0)); // Cleaning screen
 
-	SDL_WaitEvent(&Event);
+	SDL_PollEvent(&Event);
 	Anim++;
     switch (Event.type) { // Listening events
         case SDL_KEYDOWN:
