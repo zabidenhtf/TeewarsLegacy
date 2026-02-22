@@ -31,5 +31,6 @@ MenuState GameCore::Loop(){
     // Draw logo with animation
     DrawAnimationSurface(LogoAnimation,0,0,SDL_MapRGB(Screen->format, 255, 255, 255), 20 , Anim);
 	SDL_Flip(Screen);
+	SDL_Delay(16); // 60 fps
 	return online;
 }
