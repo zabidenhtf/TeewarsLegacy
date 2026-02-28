@@ -64,3 +64,26 @@ void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int num
 	// Drawing surface
 	SDL_BlitSurface(surface, &src, Screen, &point2);
 }
+
+void DrawTee(int x, int y, PlayerState state, int color){
+	switch (state){
+		case walk_left:
+			DrawAnimationSurface(TeeTilesetLeft, x, y, color, 4, tee_walk1);
+			break;
+		case walk_right:
+			DrawAnimationSurface(TeeTilesetRight, x, y, color, 4, tee_walk1);
+			break;
+		case idle_left:
+			DrawAnimationSurface(TeeTilesetLeft, x, y, color, 4, tee_idle);
+			break;
+		case idle_right:
+			DrawAnimationSurface(TeeTilesetRight, x, y, color, 4, tee_idle);
+			break;
+		case fall_left:
+			DrawAnimationSurface(TeeTilesetLeft, x, y, color, 4, tee_jump);
+			break;
+		case fall_right:
+			DrawAnimationSurface(TeeTilesetRight, x, y, color, 4, tee_jump);
+			break;
+	}
+}

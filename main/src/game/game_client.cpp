@@ -5,7 +5,6 @@
 
 // Global objects
 extern SDL_Surface *Screen;
-int Anim=1;
 
 GameCore::GameCore(){
 	return;
@@ -15,7 +14,6 @@ MenuState GameCore::Loop(){
 	SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 0, 0, 0)); // Cleaning screen
 
 	SDL_PollEvent(&Event);
-	Anim++;
     switch (Event.type) { // Listening events
         case SDL_KEYDOWN:
             printf("The %s key was pressed!\n",
@@ -25,11 +23,11 @@ MenuState GameCore::Loop(){
         	SDL_Quit();
             exit(0);
     }
-    if (Anim == 20){
-    	Anim = 1;
-    }
     // Draw logo with animation
-    DrawAnimationSurface(LogoAnimation,0,0,SDL_MapRGB(Screen->format, 255, 255, 255), 20 , Anim);
+    DrawTee(0,0, walk_left ,SDL_MapRGB(Screen->format, 255, 0, 0));
+    DrawTee(60,0, walk_right ,SDL_MapRGB(Screen->format, 255, 0, 0));
+    DrawTee(0,60, idle_left ,SDL_MapRGB(Screen->format, 255, 0, 0));
+    DrawTee(60,60, idle_right ,SDL_MapRGB(Screen->format, 255, 0, 0));
 	SDL_Flip(Screen);
 	SDL_Delay(16); // 60 fps
 	return online;
