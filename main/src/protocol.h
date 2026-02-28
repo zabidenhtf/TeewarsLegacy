@@ -16,12 +16,21 @@ struct Input{
 /* Vertex of vertex map system, also this is like float, but 1 is 32/32 */
 struct MapVertex{
 	int x,y;
+	bool last;
 };
 
 /* Map object like pickup and etc */
 struct MapObject{
 	int x,y;
 	int type;
+};
+
+/* Map structure */
+struct Map{
+	int width;
+	int height;
+	MapVertex vertices[1024];
+	MapObject objects[64];
 };
 
 enum{
