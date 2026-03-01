@@ -31,6 +31,15 @@ struct Map{
 	MapObject objects[64];
 };
 
+/* Server in master server struct */
+struct MSServer{
+	// Also, here is fixed count of max players (8)
+	int players;
+	char name[64];
+	int have_password;
+	char password[16];
+};
+
 enum{
 	ITEM_NULL = 0,
 	WEAPON_GUN,
