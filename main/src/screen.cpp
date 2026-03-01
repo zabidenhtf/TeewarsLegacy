@@ -11,6 +11,9 @@ SDL_Surface *WeaponsTilesetLeft;
 SDL_Surface *WeaponsTilesetRight;
 // Logo animation
 SDL_Surface *LogoAnimation;
+// Armor and health icons tileset
+SDL_Surface *HealthTileset;
+SDL_Surface *ArmorTileset;
 
 /* Load sprites into pointers */
 void LoadSprites(){
@@ -19,6 +22,8 @@ void LoadSprites(){
 	WeaponsTilesetLeft = LoadTexture("data/weapons_left.png");
 	WeaponsTilesetRight = LoadTexture("data/weapons_right.png");
 	LogoAnimation = LoadTexture("data/logo.png");
+	HealthTileset = LoadTexture("data/health.png");
+	ArmorTileset = LoadTexture("data/armor.png");
 }
 
 /* Draw rectange with size and color */

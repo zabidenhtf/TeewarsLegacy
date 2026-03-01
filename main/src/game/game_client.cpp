@@ -27,6 +27,8 @@ MenuState GameCore::Loop(){
     }
     // Draw logo with animation
     DrawMap(240, 120, &object,SDL_MapRGBA(Screen->format, 255, 255, 255, 255));
+    DrawAnimationSurface(HealthTileset, 240, 120, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 3, health1);
+    DrawAnimationSurface(ArmorTileset, 280, 120, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 3, armor10);
 	SDL_Flip(Screen);
 	SDL_Delay(16); // 60 fps
 	return online;

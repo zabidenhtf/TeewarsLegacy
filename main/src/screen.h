@@ -19,6 +19,9 @@ extern SDL_Surface *WeaponsTilesetLeft;
 extern SDL_Surface *WeaponsTilesetRight;
 // Logo animation
 extern SDL_Surface *LogoAnimation; // This animation have 20 frames
+// Armor and health icons tileset
+extern SDL_Surface *HealthTileset;
+extern SDL_Surface *ArmorTileset;
 
 enum{ // Tee tileset
 	tee_idle=1,
@@ -32,6 +35,18 @@ enum{ // Weapons tileset
 	rifle,
 	shotgun,
 	grenade
+};
+
+enum{ // Health tileset
+	health1=1,
+	health5,
+	healht10
+};
+
+enum{ // Armor tileset
+	armor1=1,
+	armor5,
+	armor10
 };
 
 // GFX important functions
