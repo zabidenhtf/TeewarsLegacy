@@ -65,6 +65,7 @@ void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int num
 	SDL_BlitSurface(surface, &src, Screen, &point2);
 }
 
+/* Drawing player with color, and animation */
 void DrawTee(int x, int y, PlayerState state, int color){
 	switch (state){
 		case walk_left:

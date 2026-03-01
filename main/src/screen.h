@@ -38,6 +38,6 @@ extern SDL_Surface* LoadTexture(char *path); // Load texture into surface
 extern void DrawSurface(SDL_Surface *surface, int x, int y, int color); // Draw surface with size and color
 extern void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame); // Drawing surface, but with frame animation (Can be helpfull in animations)
 // Game GFX functions
-extern void DrawTee(int x, int y, PlayerState state, int color);
+extern void DrawTee(int x, int y, PlayerState state, int color); // Drawing player with color, and animation
 
 #endif

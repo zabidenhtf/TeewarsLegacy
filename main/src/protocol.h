@@ -27,8 +27,6 @@ struct MapObject{
 
 /* Map structure */
 struct Map{
-	int width;
-	int height;
 	MapVertex vertices[1024];
 	MapObject objects[64];
 };

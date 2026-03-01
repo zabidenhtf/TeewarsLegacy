@@ -1,11 +1,29 @@
-object SPAWN 2.5 0
-point 0 1
-point 6 1
-point 6 4
-point 5 4
-point 5 5
-point 1 5
-point 1 4
-point 0 4
-end
+object SPAWN
+x 2.5 
+y 0
+point 
+x 0
+y 1
+point 
+x 6 
+y 1
+point
+x 6 
+y 4
+point 
+x 5 
+y 4
+point 
+x 5 
+y 5
+point 
+x 1 
+y 5
+point 
+x 1 
+y 4
+point 
+x 0 
+y 4
+break
 
