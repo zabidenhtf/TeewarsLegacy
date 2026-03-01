@@ -88,3 +88,13 @@ void DrawTee(int x, int y, PlayerState state, int color){
 			break;
 	}
 }
+void DrawMap(int x, int y, Map *object, int color){
+    // Draw outline
+    for(int i=0;i<object->vertices_n;i++){
+	    int next = (i+1)%object->vertices_n;
+	    lineRGBA(Screen,
+	             object->vertices[i].x + x, object->vertices[i].y + y,
+	             object->vertices[next].x + x, object->vertices[next].y + y,
+	             255,0,0,255);
+	}
+}

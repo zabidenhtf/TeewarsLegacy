@@ -2,6 +2,9 @@
 
 #include "SDL/SDL.h"
 #include "SDL/SDL_image.h"
+#include "SDL/SDL_gfxPrimitives.h"
+
+#include "protocol.h"
 #include "types.h"
 
 #ifndef SCREEN_H
@@ -32,12 +35,13 @@ enum{ // Weapons tileset
 };
 
 // GFX important functions
-extern void LoadSprites(); // Load sprites into pointers
-extern void DrawRectangle(int x, int y, int w, int h, int color); // Draw rectange with size and color
-extern SDL_Surface* LoadTexture(char *path); // Load texture into surface
-extern void DrawSurface(SDL_Surface *surface, int x, int y, int color); // Draw surface with size and color
-extern void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame); // Drawing surface, but with frame animation (Can be helpfull in animations)
+void LoadSprites(); // Load sprites into pointers
+void DrawRectangle(int x, int y, int w, int h, int color); // Draw rectange with size and color
+SDL_Surface* LoadTexture(char *path); // Load texture into surface
+void DrawSurface(SDL_Surface *surface, int x, int y, int color); // Draw surface with size and color
+void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame); // Drawing surface, but with frame animation (Can be helpfull in animations)
 // Game GFX functions
-extern void DrawTee(int x, int y, PlayerState state, int color); // Drawing player with color, and animation
+void DrawTee(int x, int y, PlayerState state, int color); // Drawing player with color, and animation
+void DrawMap(int x, int y, Map *object, int color); // Draw map with game objects (like pickups and etc)
 
 #endif

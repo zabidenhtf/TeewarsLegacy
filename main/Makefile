@@ -13,7 +13,7 @@ TARGETS = src/main.cpp \
 # Output
 EXEC = teewarslegacy
 # Linker flags
-LDFLAGS = -lSDL -lSDL_image
+LDFLAGS = -lSDL -lSDL_image -lSDL_gfx
 
 all:
 	$(CXX) $(TARGETS) $(LDFLAGS) -o $(EXEC)

@@ -1,12 +1,14 @@
 /* copyright (c) 2026 mykyta polishyk, see LICENSE file for more info */
 #include "game_client.h"
 #include "../screen.h"
+#include "../map.h"
 #include "stdio.h"
 
 // Global objects
 extern SDL_Surface *Screen;
 
 GameCore::GameCore(){
+    LoadMap(&object, "dm1");
 	return;
 }
 
@@ -24,10 +26,7 @@ MenuState GameCore::Loop(){
             exit(0);
     }
     // Draw logo with animation
-    DrawTee(0,0, walk_left ,SDL_MapRGB(Screen->format, 255, 0, 0));
-    DrawTee(60,0, walk_right ,SDL_MapRGB(Screen->format, 255, 0, 0));
-    DrawTee(0,60, idle_left ,SDL_MapRGB(Screen->format, 255, 0, 0));
-    DrawTee(60,60, idle_right ,SDL_MapRGB(Screen->format, 255, 0, 0));
+    DrawMap(240, 120, &object,SDL_MapRGB(Screen->format, 255, 0, 0));
 	SDL_Flip(Screen);
 	SDL_Delay(16); // 60 fps
 	return online;

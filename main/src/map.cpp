@@ -1,4 +1,4 @@
-
+/* copyright (c) 2026 mykyta polishyk, see LICENSE file for more info */
 #include "map.h"
 #include "stdio.h"
 #include "string.h"
@@ -6,7 +6,7 @@
 #include "math.h"
 
 /* Parser of maps */
-void LoadMap(Map object, const char* map_name){
+void LoadMap(Map *object, const char* map_name){
 	FILE *file_pointer;
 	// Editing path and loading
 	char path[256] = "maps/";
@@ -38,31 +38,35 @@ void LoadMap(Map object, const char* map_name){
         if (line_buffer[0] == 'x') {
         	// If it object writing into object massive, else writing into vertices
         	if (is_object == true){
-        		object.objects[n_objects].x = round(atof(line_buffer + 1)*32);
+        		object->objects[n_objects].x = round(atof(line_buffer + 1)*32);
         	}
         	else{
-        		object.vertices[n_vertex].x = round(atof(line_buffer + 1)*32);
+        		object->vertices[n_vertex].x = round(atof(line_buffer + 1)*32);
         	}
         }
         if (line_buffer[0] == 'y') {
         	// Same, but adding into counters
         	if (is_object == true){
-        		object.objects[n_objects].y = round(atof(line_buffer + 1)*32);
+        		object->objects[n_objects].y = round(atof(line_buffer + 1)*32);
         		n_objects++;
         	}
         	else{
-        		object.vertices[n_vertex].y = round(atof(line_buffer + 1)*32);
+        		object->vertices[n_vertex].y = round(atof(line_buffer + 1)*32);
             	n_vertex++;
         	}
         }
         if (strncmp(line_buffer, "break", 5) == 0) {
-            object.vertices[n_vertex-1].last = true;
+            object->vertices[n_vertex-1].last = true;
         }
         line_number++;
     }
+    // Cloning info about vertices into object
+    object->vertices_n = n_vertex;
+    object->objects_n = n_objects;
+
     // Debug output
     for (int i = 0; i < n_vertex; i ++){
-    	printf("Vertex %d on pos %d %d\n", i, object.vertices[i].x, object.vertices[i].y);
+    	printf("Vertex %d on pos %d %d\n", i, object->vertices[i].x, object->vertices[i].y);
     }
     fclose(file_pointer);
 }

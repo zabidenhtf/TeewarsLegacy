@@ -4,7 +4,7 @@
 
 #include "protocol.h"
 
-void LoadMap(Map object, const char* map_name); // Parser of maps
+void LoadMap(Map *object, const char* map_name); // Parser of maps
 void SendMap(Map object, char* string); // Transform map into string
 void SaveMap(Map object, const char* map_name); // Saving map (Helpfull for editor)
 

@@ -27,12 +27,15 @@ struct MapObject{
 
 /* Map structure */
 struct Map{
+	// Count of objects
+	int vertices_n;
+	int objects_n;
 	MapVertex vertices[1024];
 	MapObject objects[64];
 };
 
-/* Server in master server struct */
-struct MSServer{
+/* Server info struct */
+struct ServerInfo{
 	// Also, here is fixed count of max players (8)
 	int players;
 	char name[64];

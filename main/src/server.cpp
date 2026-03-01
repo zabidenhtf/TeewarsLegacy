@@ -4,5 +4,5 @@
 #include "map.h"
 void server_main(){
 	Map object;
-	LoadMap(object, "dm1");
+	LoadMap(&object, "dm1");
 }
