@@ -1,8 +1,7 @@
-/* copyright (c) 2007 magnus auvinen, see licence.txt for more info */
 /* copyright (c) 2026 mykyta polishyk, see LICENSE file for more info */
 
-#ifndef GAME_MAPRES_COL_H
-#define GAME_MAPRES_COL_H
+#ifndef COLLISION_H
+#define COLLISION_H
 
 enum{
 	SOLID=0,
