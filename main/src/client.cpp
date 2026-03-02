@@ -40,7 +40,11 @@ void client_main(){
 	LoadSprites();
 	// Creating window
 	Screen = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
-	SDL_WM_SetCaption("Teewars Legacy milestone ", NULL);
+	// Cloning game version into caption
+	char WindowCaption[86];
+	strcpy(WindowCaption, "Teewars legacy milestone ");
+	strcat(WindowCaption, TWLEGACY_MILESTONE);
+	SDL_WM_SetCaption(WindowCaption, NULL);
 
 	while (true){
 		switch (state){

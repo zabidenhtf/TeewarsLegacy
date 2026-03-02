@@ -22,6 +22,8 @@ extern SDL_Surface *LogoAnimation; // This animation have 20 frames
 // Armor and health icons tileset
 extern SDL_Surface *HealthTileset;
 extern SDL_Surface *ArmorTileset;
+// Clouds tileset
+extern SDL_Surface *CloudsTileset;
 
 enum{ // Tee tileset
 	tee_idle=1,

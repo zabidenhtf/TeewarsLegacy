@@ -2,6 +2,7 @@
 #include "game_client.h"
 #include "../screen.h"
 #include "../map.h"
+
 #include "stdio.h"
 
 // Global objects
@@ -13,7 +14,7 @@ GameCore::GameCore(){
 }
 
 MenuState GameCore::Loop(){
-	SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 0, 0, 0)); // Cleaning screen
+	SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 165,198,229)); // Cleaning screen
 
 	SDL_PollEvent(&Event);
     switch (Event.type) { // Listening events
@@ -32,4 +33,8 @@ MenuState GameCore::Loop(){
 	SDL_Flip(Screen);
 	SDL_Delay(16); // 60 fps
 	return online;
+}
+
+void GameCore::DrawClouds(){
+return;
 }

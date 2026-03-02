@@ -14,6 +14,8 @@ SDL_Surface *LogoAnimation;
 // Armor and health icons tileset
 SDL_Surface *HealthTileset;
 SDL_Surface *ArmorTileset;
+// Clouds tileset
+SDL_Surface *CloudsTileset;
 
 /* Load sprites into pointers */
 void LoadSprites(){
@@ -24,6 +26,7 @@ void LoadSprites(){
 	LogoAnimation = LoadTexture("data/logo.png");
 	HealthTileset = LoadTexture("data/health.png");
 	ArmorTileset = LoadTexture("data/armor.png");
+	CloudsTileset = LoadTexture("data/clouds.png");
 }
 
 /* Draw rectange with size and color */
