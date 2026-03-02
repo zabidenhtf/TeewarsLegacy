@@ -1,3 +1,5 @@
+; DM1 originally by teeworlds team 2007
+; ported into TW-Legacy engine by Mykyta Polishyk (zabiden) 2026
 object SPAWN
 x 2.5 
 y 0

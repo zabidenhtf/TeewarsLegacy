@@ -28,35 +28,37 @@ void LoadMap(Map *object, const char* map_name){
 	while (fgets(line_buffer, sizeof(line_buffer), file_pointer)) {
         printf("Line: %s", line_buffer);
         // Checking is this object or not
-        if (strncmp(line_buffer, "point", 5) == 0) {
-        	is_object = false;
-        }
-        if (strncmp(line_buffer, "object", 6) == 0) {
-        	is_object = true;
-        }
-        // Parsing position of it
-        if (line_buffer[0] == 'x') {
-        	// If it object writing into object massive, else writing into vertices
-        	if (is_object == true){
-        		object->objects[n_objects].x = round(atof(line_buffer + 1)*32);
-        	}
-        	else{
-        		object->vertices[n_vertex].x = round(atof(line_buffer + 1)*32);
-        	}
-        }
-        if (line_buffer[0] == 'y') {
-        	// Same, but adding into counters
-        	if (is_object == true){
-        		object->objects[n_objects].y = round(atof(line_buffer + 1)*32);
-        		n_objects++;
-        	}
-        	else{
-        		object->vertices[n_vertex].y = round(atof(line_buffer + 1)*32);
-            	n_vertex++;
-        	}
-        }
-        if (strncmp(line_buffer, "break", 5) == 0) {
-            object->vertices[n_vertex-1].last = true;
+        if (line_buffer[0] != ';'){ // If it tip we skip check
+            if (strncmp(line_buffer, "point", 5) == 0) {
+                is_object = false;
+            }
+            if (strncmp(line_buffer, "object", 6) == 0) {
+                is_object = true;
+            }
+            // Parsing position of it
+            if (line_buffer[0] == 'x') {
+                // If it object writing into object massive, else writing into vertices
+                if (is_object == true){
+                    object->objects[n_objects].x = round(atof(line_buffer + 1)*32);
+                }
+                else{
+                    object->vertices[n_vertex].x = round(atof(line_buffer + 1)*32);
+                }
+            }
+            if (line_buffer[0] == 'y') {
+                // Same, but adding into counters
+                if (is_object == true){
+                    object->objects[n_objects].y = round(atof(line_buffer + 1)*32);
+                    n_objects++;
+                }
+                else{
+                    object->vertices[n_vertex].y = round(atof(line_buffer + 1)*32);
+                    n_vertex++;
+                }
+            }
+            if (strncmp(line_buffer, "break", 5) == 0) {
+                object->vertices[n_vertex-1].last = true;
+            }
         }
         line_number++;
     }
