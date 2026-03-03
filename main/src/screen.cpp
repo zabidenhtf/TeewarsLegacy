@@ -1,4 +1,5 @@
 #include "screen.h"
+#include "math.h"
 
 // Global objects
 extern SDL_Surface *Screen;
@@ -96,6 +97,7 @@ void DrawTee(int x, int y, PlayerState state, int color){
 			break;
 	}
 }
+/* Draw map with game objects (like pickups and etc) */
 void DrawMap(int x, int y, Map *object, int color){
     // Draw outline
     for(int i=0;i<object->vertices_n;i++){
@@ -105,4 +107,20 @@ void DrawMap(int x, int y, Map *object, int color){
 	             object->vertices[next].x + x, object->vertices[next].y + y,
 	             color);
 	}
+}
+
+/* Drawing clouds with sin animation */
+void DrawClouds(){
+    for (int i=0; i<(800/64)+1; i++){
+        int n;
+        // Selection of sinus direction
+        if (i%2 == 0){
+            n = -1;
+        }
+        else{
+            n = 1;
+        }
+        // Drawing surface
+        DrawAnimationSurface(CloudsTileset, i*64, 20-sin(SDL_GetTicks()/500.0f)*5*n, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 2, 1+i%2);
+    }
 }

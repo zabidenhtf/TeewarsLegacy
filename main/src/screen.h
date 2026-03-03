@@ -60,5 +60,6 @@ void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int num
 // Game GFX functions
 void DrawTee(int x, int y, PlayerState state, int color); // Drawing player with color, and animation
 void DrawMap(int x, int y, Map *object, int color); // Draw map with game objects (like pickups and etc)
+void DrawClouds(); // Drawing clouds with sin animation
 
 #endif

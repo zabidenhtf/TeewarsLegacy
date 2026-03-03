@@ -14,7 +14,7 @@ GameCore::GameCore(){
 }
 
 MenuState GameCore::Loop(){
-	SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 165,198,229)); // Cleaning screen
+	SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 120,120,255)); // Cleaning screen
 
 	SDL_PollEvent(&Event);
     switch (Event.type) { // Listening events
@@ -28,13 +28,8 @@ MenuState GameCore::Loop(){
     }
     // Draw logo with animation
     DrawMap(240, 120, &object,SDL_MapRGBA(Screen->format, 255, 255, 255, 255));
-    DrawAnimationSurface(HealthTileset, 240, 120, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 3, health1);
-    DrawAnimationSurface(ArmorTileset, 280, 120, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 3, armor10);
+    DrawClouds();
 	SDL_Flip(Screen);
 	SDL_Delay(16); // 60 fps
 	return online;
-}
-
-void GameCore::DrawClouds(){
-return;
 }

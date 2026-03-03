@@ -13,7 +13,6 @@ class GameCore{
 public:
 	GameCore();
 	MenuState Loop();
-	void DrawClouds();
 private:
 	SDL_Event Event;
     Map object; // For debug
