@@ -27,7 +27,7 @@ MenuState GameCore::Loop(){
             exit(0);
     }
     // Draw logo with animation
-    DrawMap(240, 120, &object,SDL_MapRGBA(Screen->format, 255, 255, 255, 255));
+    DrawMap(20, 120, &object,SDL_MapRGBA(Screen->format, 255, 255, 255, 255));
     DrawClouds();
 	SDL_Flip(Screen);
 	SDL_Delay(16); // 60 fps
