@@ -6,7 +6,7 @@
 #include "version.h"
 #include "network.h"
 #include "types.h"
-#include "game/game_client.h"
+#include "game.h"
 
 #include "SDL/SDL.h"
 #include "SDL/SDL_image.h"

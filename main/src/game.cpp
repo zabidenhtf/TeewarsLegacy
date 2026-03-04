@@ -1,7 +1,7 @@
 /* copyright (c) 2026 mykyta polishyk, see LICENSE file for more info */
-#include "game_client.h"
-#include "../screen.h"
-#include "../map.h"
+#include "game.h"
+#include "screen.h"
+#include "map.h"
 
 #include "stdio.h"
 
