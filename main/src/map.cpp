@@ -34,6 +34,40 @@ void LoadMap(Map *object, const char* map_name){
             }
             if (strncmp(line_buffer, "object", 6) == 0) {
                 is_object = true;
+                // Selection of object type
+                if (strncmp(line_buffer + 7, "SPAWN" , 5) == 0){
+                    object->objects[n_objects].type = SPAWN;
+                }
+                if (strncmp(line_buffer + 7, "WEAPON_GUN" , 10) == 0){
+                    object->objects[n_objects].type = WEAPON_GUN;
+                }
+                if (strncmp(line_buffer + 7, "WEAPON_SHOTGUN" , 14) == 0){
+                    object->objects[n_objects].type = WEAPON_SHOTGUN;
+                }
+                if (strncmp(line_buffer + 7, "WEAPON_RIFLE" , 12) == 0){
+                    object->objects[n_objects].type = WEAPON_RIFLE;
+                }
+                if (strncmp(line_buffer + 7, "WEAPON_GRENADE" , 14) == 0){
+                    object->objects[n_objects].type = WEAPON_GRENADE;
+                }
+                if (strncmp(line_buffer + 7, "ARMOR_1" , 7) == 0){
+                    object->objects[n_objects].type = ARMOR_1;
+                }
+                if (strncmp(line_buffer + 7, "ARMOR_5" , 7) == 0){
+                    object->objects[n_objects].type = ARMOR_5;
+                }
+                if (strncmp(line_buffer + 7, "ARMOR_10" , 8) == 0){
+                    object->objects[n_objects].type = ARMOR_10;
+                }
+                if (strncmp(line_buffer + 7, "HEALTH_1" , 8) == 0){
+                    object->objects[n_objects].type = HEALTH_1;
+                }
+                if (strncmp(line_buffer + 7, "HEALTH_5" , 8) == 0){
+                    object->objects[n_objects].type = HEALTH_5;
+                }
+                if (strncmp(line_buffer + 7, "HEALTH_10" , 9) == 0){
+                    object->objects[n_objects].type = HEALTH_10;
+                }
             }
             // Parsing position of it
             if (line_buffer[0] == 'x') {

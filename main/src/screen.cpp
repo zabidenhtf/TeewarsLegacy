@@ -107,6 +107,11 @@ void DrawMap(int x, int y, Map *object, int color){
 	             object->vertices[next].x + x, object->vertices[next].y + y,
 	             color);
 	}
+	// Draw objects
+	for(int i=0;i<object->objects_n;i++){
+		// For debug we use a tee icon
+		DrawAnimationSurface(TeeTilesetLeft, object->objects[i].x, object->objects[i].y, SDL_MapRGBA(Screen->format, 255, 255, 255, 255),4,1);
+	}
 }
 
 /* Drawing clouds with sin animation */
