@@ -59,16 +59,16 @@ void DrawSurface(SDL_Surface *surface, int x, int y, int color){
 
 /* Drawing surface, but with frame animation */
 void DrawAnimationSurface(SDL_Surface *surface, int x, int y, int color, int numofframes, int frame){
-	SDL_Rect point2;
-	point2.x = x;
-	point2.y = y;
-
 	// Crop frame 
 	SDL_Rect src;
 	src.x = 0;
 	src.y = (frame-1)*(surface->h/numofframes);
 	src.w = surface->w;
 	src.h = surface->h / numofframes;
+
+	SDL_Rect point2;
+	point2.x = x;
+	point2.y = y-src.h;
 
 	// Drawing surface
 	SDL_BlitSurface(surface, &src, Screen, &point2);
@@ -110,13 +110,13 @@ void DrawMap(int x, int y, Map *object, int color){
 	// Draw objects
 	for(int i=0;i<object->objects_n;i++){
 		// For debug we use a tee icon
-		DrawAnimationSurface(TeeTilesetLeft, object->objects[i].x, object->objects[i].y, SDL_MapRGBA(Screen->format, 255, 255, 255, 255),4,1);
+		DrawAnimationSurface(TeeTilesetLeft, object->objects[i].x + x, object->objects[i].y + y, SDL_MapRGBA(Screen->format, 255, 255, 255, 255),4,1);
 	}
 }
 
 /* Drawing clouds with sin animation */
 void DrawClouds(){
-    for (int i=0; i<(800/64)+1; i++){
+    for (int i=0; i<(800/128)+1; i++){
         int n;
         // Selection of sinus direction
         if (i%2 == 0){
@@ -126,6 +126,6 @@ void DrawClouds(){
             n = 1;
         }
         // Drawing surface
-        DrawAnimationSurface(CloudsTileset, i*64, 20-sin(SDL_GetTicks()/500.0f)*5*n, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 2, 1+i%2);
+        DrawAnimationSurface(CloudsTileset, i*128, 20-sin(SDL_GetTicks()/500.0f)*5*n, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 2, 1+i%2);
     }
 }

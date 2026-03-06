@@ -1,14 +1,8 @@
 ; DM1 originally by teeworlds team 2007
 ; ported into TW-Legacy engine by Mykyta Polishyk (zabiden) 2026
-object SPAWN
-x 2.5 
-y 3
 object WEAPON_GUN
-x 0.5 
-y 3
-object HEALTH_5
-x 5.5 
-y 3
+x 0
+y 2
 point 
 x 0
 y 2
