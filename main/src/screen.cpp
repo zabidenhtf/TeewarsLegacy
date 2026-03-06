@@ -101,11 +101,13 @@ void DrawTee(int x, int y, PlayerState state, int color){
 void DrawMap(int x, int y, Map *object, int color){
     // Draw outline
     for(int i=0;i<object->vertices_n;i++){
-	    int next = (i+1)%object->vertices_n;
-	    lineColor(Screen,
+	    int next = i+1;
+	    if (object->vertices[i].last != true){
+	    	lineColor(Screen,
 	             object->vertices[i].x + x, object->vertices[i].y + y,
 	             object->vertices[next].x + x, object->vertices[next].y + y,
 	             color);
+	    }
 	}
 	// Draw objects
 	for(int i=0;i<object->objects_n;i++){
@@ -126,6 +128,6 @@ void DrawClouds(){
             n = 1;
         }
         // Drawing surface
-        DrawAnimationSurface(CloudsTileset, i*128, 20-sin(SDL_GetTicks()/500.0f)*5*n, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 2, 1+i%2);
+        DrawAnimationSurface(CloudsTileset, i*128, 60-sin(SDL_GetTicks()/500.0f)*5*n, SDL_MapRGBA(Screen->format, 255, 255, 255, 255), 2, 1+i%2);
     }
 }
